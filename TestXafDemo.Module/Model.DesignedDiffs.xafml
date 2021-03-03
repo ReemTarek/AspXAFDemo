@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Test demo" AboutInfoString="This is test demo" Logo="48.png" PreferredLanguage="(Default language)">
+  <ActionDesign>
+    <Actions>
+      <Action Id="Logon" Caption="Sign In" ValidationContexts="" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="TestXafDemo.Module.BusinessObjects.Marketing.Customer" DefaultListViewImage="BO_Customer" DefaultDetailViewImage="BO_Customer" ImageName="BO_Customer" />
+    <Class Name="TestXafDemo.Module.BusinessObjects.Marketing.Testimonial" ImageName="BO_Note" />
+    <Class Name="TestXafDemo.Module.BusinessObjects.Planning.Project" ImageName="BO_Folder" />
+    <Class Name="TestXafDemo.Module.BusinessObjects.XafAspDemo.Countries" DefaultDetailViewImage="DefaultMap" DefaultListViewImage="DefaultMap" DefaultListViewAllowEdit="True" />
+  </BOModel>
+  <NavigationItems NavigationStyle="NavBar" DefaultParentImageName="Open" DefaultLeafImageName="Open" ShowImages="True">
+    <Items>
+      <Item Id="@d4ac8f11-4e55-4788-9178-12e4d2a13bf7" ImageName="BO_Customer" ViewId="Person_ListView" QuickAccessItem="False" Caption="Employee" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@3e5817ca-b119-47f5-94d6-c7ccd93f777a" ImageName="BO_Lead" ViewId="Person_ListView" Caption="Employee" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Countries" ImageName="DefaultMap_16x16" ChildItemsDisplayStyle="LargeIcons" Caption="Countries" QuickAccessItem="False" ViewId="Countries_ListView" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Countries_ListView" Visible="True" ImageName="DefaultMap_16x16" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Marketing" ImageName="BO_Note" Caption="Marketing" ViewId="Customer_ListView" />
+      <Item Id="Planning" Caption="Planning" ViewId="Project_ListView" />
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="20.2.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Countries_ListView" AllowDelete="False" />
+    <ListView Id="Project_ListView" IsFooterVisible="True" IsGroupPanelVisible="False" />
+  </Views>
+</Application>
